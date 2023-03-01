@@ -18,33 +18,34 @@ namespace CalculateArea
 
             ShapeCreatorFactory creator = new ShapeCreatorFactory();
             IShape shape;
+            double c = 0;
 
             if (optionChosen == "c" || optionChosen == "2")
             {
                 Console.WriteLine("Enter the radius");
-                double radius = double.Parse(Console.ReadLine());
+                double.TryParse(Console.ReadLine(), out double radius);
 
-                shape = creator.CreateShape("c", radius);
+                shape = creator.CreateShape(Shape.Circle, radius);
                 shape.CalculateArea();
 
             }
             else if (optionChosen == "s" || optionChosen == "3")
             {
                 Console.WriteLine("Enter the side");
-                double side = double.Parse(Console.ReadLine());
+                double.TryParse(Console.ReadLine(), out double side);
 
-                shape = creator.CreateShape("s", side);
+                shape = creator.CreateShape(Shape.Sq, side);
                 shape.CalculateArea();
             }
             else if (optionChosen == "r" || optionChosen == "1")
             {
                 Console.WriteLine("Enter the length");
-                double length = double.Parse(Console.ReadLine());
+                double.TryParse(Console.ReadLine(), out double length);
 
                 Console.WriteLine("Enter the breadth");
-                double breadth = double.Parse(Console.ReadLine());
+                double.TryParse(Console.ReadLine(), out double breadth);
 
-                shape = creator.CreateShape("r", length,breadth);
+                shape = creator.CreateShape(Shape.Rectangle, length,breadth);
                 shape.CalculateArea();
             }
             else
@@ -52,6 +53,13 @@ namespace CalculateArea
 
             Console.Read();
         }
+    }
+
+    public enum Shape
+    {
+        Circle,
+        Rectangle,
+        Square
     }
 
     

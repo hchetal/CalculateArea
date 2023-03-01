@@ -8,17 +8,17 @@ namespace CalculateArea
 {
     public class ShapeCreatorFactory
     {
-        public IShape CreateShape(string shape, double side1, double side2 = 0)
+        public IShape CreateShape(Shape shape, double side1, double side2 = 0)
         {
-            if (shape == "c")
+            if (shape == Shape.Circle)
             {
                 return new Circle(side1);
             }
-            else if (shape == "s")
+            else if (shape == Shape.Square)
             {
                 return new Square(side1);
             }
-            else if (shape == "r")
+            else if (shape == Shape.Rectangle)
             {
                 return new Rectangle(side1,side2);
             }
