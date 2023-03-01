@@ -34,7 +34,7 @@ namespace CalculateArea
                 Console.WriteLine("Enter the side");
                 double.TryParse(Console.ReadLine(), out double side);
 
-                shape = creator.CreateShape(Shape.Sq, side);
+                shape = creator.CreateShape(Shape.Square, side);
                 shape.CalculateArea();
             }
             else if (optionChosen == "r" || optionChosen == "1")
