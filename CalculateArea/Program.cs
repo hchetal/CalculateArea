@@ -18,7 +18,7 @@ namespace CalculateArea
 
             ShapeCreatorFactory creator = new ShapeCreatorFactory();
             IShape shape;
-            double c = 0;
+            
 
             if (optionChosen == "c" || optionChosen == "2")
             {
